@@ -13,7 +13,7 @@ namespace CoffeeShop.Controllers
          
         public IActionResult Shop()
         {
-            return View(productRepository.GetAllProducts);
+            return View(productRepository.GetAllProducts());
         }
     }
 }
