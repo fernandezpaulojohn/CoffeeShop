@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CoffeeShop.Models Product> 
+﻿@model IEnumerable<CoffeeShop.Models.Product> 
 
 
 <!DOCTYPE html>
@@ -10,10 +10,16 @@
     </head>
     <body>
 
-        <h1> Coffee Shop</h1>
-        <img height="100" width="100"/>
-        <h3></h3>
-        <p></p>
+    <h1> Coffee Shop</h1>
+    @foreach (var item in Model)
+    {
+        <img height="100" width="100" src="@item.ImageUrl" />
+        <h3>@item.Name</h3>
+        <p>@item.Price.ToString("c")</p>
+    }
+
+        
+        
 
     </body>
 </html>
