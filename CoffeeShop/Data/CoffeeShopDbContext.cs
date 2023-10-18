@@ -3,14 +3,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CoffeeShop.Data
 {
-    public class CoffeeShopDbContext: DbContext
+    public class CoffeeShopDbContext : DbContext
     {
-        public CoffeeShopDbContext(DbContextOptions<CoffeeShopDbContext>options) : base(options)
+        public CoffeeShopDbContext(DbContextOptions<CoffeeShopDbContext> options) : base(options)
         {
 
         }
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
