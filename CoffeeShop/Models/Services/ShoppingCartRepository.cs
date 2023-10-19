@@ -59,7 +59,7 @@ namespace CoffeeShop.Models.Services
 
         public List<ShoppingCartItem> GetShoppingCartItems()
         {
-          return ShoppingCartItems ??= dbContext.ShoppingCartItems.Where(s=> s.ShoppingCartId == ShoppingCartId).Include(p=>p.Product).ToList();
+          return ShoppingCartItems ??= dbContext.ShoppingCartItems.Where(s => s.ShoppingCartId == ShoppingCartId).Include(p=>p.Product).ToList();
         }
 
         public decimal GetShoppingCartTotal()
