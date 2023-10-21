@@ -29,6 +29,8 @@ namespace CoffeeShop.Controllers
                 if (product != null)
                 {
                     shoppingCartRepository.AddToCart(product);
+                  int cartCount = shoppingCartRepository.GetShoppingCartItems().Count;
+                  HttpContext.Session.SetInt32("CartCount", cartCount);
                 }
                 return RedirectToAction("Index");
             }
@@ -39,7 +41,9 @@ namespace CoffeeShop.Controllers
                 if (product != null)
                 {
                     shoppingCartRepository.RemoveFromCart(product);
-                }
+                int cartCount = shoppingCartRepository.GetShoppingCartItems().Count;
+                HttpContext.Session.SetInt32("CartCount", cartCount);
+            }
                 return RedirectToAction("Index");
             }
     }
