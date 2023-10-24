@@ -26,6 +26,7 @@ namespace CoffeeShop.Controllers
         {
             orderRepository.PlaceOrder(order);
             shopCartRepository.ClearCart();
+            HttpContext.Session.SetInt32("CartCount", 0);
             return RedirectToAction("CheckoutComplete");
         }
 
